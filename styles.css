@@ -1,0 +1,1025 @@
+/* MileIQ Migration Hub Styles */
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --success-color: #16a34a;
+    --warning-color: #eab308;
+    --danger-color: #dc2626;
+    --dark-bg: #1f2937;
+    --light-bg: #f9fafb;
+    --card-bg: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Confluence Section */
+.confluence-section {
+    background: white;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.confluence-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.confluence-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.confluence-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.confluence-links a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Dashboard Section */
+.dashboard-section {
+    padding: 3rem 0;
+    background: var(--light-bg);
+}
+
+.dashboard-section h2 {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.metric-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.metric-content {
+    padding: 1.5rem;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.metric-item:last-child {
+    border-bottom: none;
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.metric-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ranking-item:last-child {
+    border-bottom: none;
+}
+
+.keyword {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.position {
+    background: var(--success-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-refresh {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.btn-refresh:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Issues Section */
+.issues-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+.issues-section h2 {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--danger-color);
+}
+
+.issues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.issue-card {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid;
+}
+
+.issue-card.high-risk {
+    border-color: var(--danger-color);
+}
+
+.issue-card.technical {
+    border-color: var(--warning-color);
+}
+
+.issue-card.webflow-specific {
+    border-color: var(--primary-color);
+}
+
+.issue-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.issue-card ul {
+    list-style: none;
+}
+
+.issue-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.issue-card li:last-child {
+    border-bottom: none;
+}
+
+.issue-card strong {
+    color: var(--text-primary);
+}
+
+code {
+    background: var(--dark-bg);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Checklist Section */
+.checklist-section {
+    padding: 3rem 0;
+    background: var(--light-bg);
+}
+
+.checklist-section h2 {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    background: white;
+    border-radius: 12px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--success-color), var(--primary-color));
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Phase Cards */
+.checklist-phases {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.phase-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.phase-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.phase-header:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.phase-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.phase-card.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.phase-content {
+    padding: 2rem;
+    display: none;
+}
+
+.phase-card.expanded .phase-content {
+    display: block;
+}
+
+.checklist-group {
+    margin-bottom: 2rem;
+}
+
+.checklist-group:last-child {
+    margin-bottom: 0;
+}
+
+.checklist-group h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.checklist-item:hover {
+    background: #f3f4f6;
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.checklist-item label {
+    flex-grow: 1;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checklist-item input[type="checkbox"]:checked + label {
+    color: var(--success-color);
+    text-decoration: line-through;
+}
+
+.btn-upload {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-upload:hover {
+    background: var(--secondary-color);
+}
+
+.upload-list {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.upload-list.has-files {
+    display: block;
+}
+
+.upload-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+}
+
+.upload-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.upload-item a:hover {
+    text-decoration: underline;
+}
+
+.upload-remove {
+    color: var(--danger-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-export,
+.btn-print,
+.btn-clear {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-export {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-export:hover {
+    background: #15803d;
+}
+
+.btn-print {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-print:hover {
+    background: var(--secondary-color);
+}
+
+.btn-clear {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-clear:hover {
+    background: #b91c1c;
+}
+
+/* Metrics Section */
+.metrics-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+.metrics-section h2 {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-target {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--border-color);
+}
+
+.metric-target i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.metric-target h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.metric-target p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.status-indicator {
+    margin-top: 1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--warning-color);
+    color: white;
+}
+
+.status-badge.success {
+    background: var(--success-color);
+}
+
+.status-badge.warning {
+    background: var(--warning-color);
+}
+
+.status-badge.danger {
+    background: var(--danger-color);
+}
+
+/* Roadmap Section */
+.roadmap-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    position: relative;
+}
+
+.roadmap-section h2 {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+}
+
+.roadmap-container {
+    display: grid;
+    gap: 3rem;
+}
+
+/* Timeline Visualization */
+.roadmap-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 2rem 0;
+    overflow-x: auto;
+    min-height: 300px;
+}
+
+.roadmap-phase {
+    flex: 1;
+    min-width: 150px;
+    position: relative;
+    text-align: center;
+    animation: fadeInUp 0.5s ease;
+}
+
+.phase-marker {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    background: white;
+    border: 3px solid #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.phase-marker.active {
+    border-color: var(--success-color);
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.phase-marker:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.marker-icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.phase-marker.active .marker-icon {
+    color: var(--success-color);
+}
+
+.marker-label {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.phase-details {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-top: 2.5rem;
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.3s forwards;
+}
+
+.phase-details h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.phase-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.phase-details li {
+    padding: 0.4rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.phase-details li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.phase-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #9ca3af;
+}
+
+.status-dot.active {
+    background: var(--success-color);
+    animation: pulse 2s infinite;
+}
+
+.timeline-connector {
+    position: absolute;
+    top: 40px;
+    width: calc(100% - 200px);
+    height: 3px;
+    background: linear-gradient(90deg, var(--border-color) 50%, transparent 50%);
+    background-size: 10px 3px;
+    z-index: 1;
+}
+
+/* Milestone Summary */
+.milestone-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.milestone-summary h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.milestone-card {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.milestone-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.milestone-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.milestone-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.milestone-progress {
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-mini {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success-color), var(--primary-color));
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+/* Critical Path */
+.critical-path {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.critical-path h3 {
+    color: var(--danger-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.path-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.path-timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.path-item {
+    position: relative;
+    padding: 1rem 0;
+    padding-left: 2rem;
+}
+
+.path-marker {
+    position: absolute;
+    left: -2rem;
+    top: 1.5rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--border-color);
+}
+
+.path-item.completed .path-marker {
+    background: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.path-item.active .path-marker {
+    background: var(--warning-color);
+    border-color: var(--warning-color);
+    animation: pulse 2s infinite;
+}
+
+.path-content strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.path-content span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-bg);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .issues-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .confluence-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .checklist-item {
+        flex-wrap: wrap;
+    }
+    
+    .btn-upload {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-export,
+    .btn-print,
+    .btn-clear {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .roadmap-timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timeline-connector {
+        display: none;
+    }
+    
+    .roadmap-phase {
+        margin-bottom: 2rem;
+    }
+    
+    .milestone-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .header {
+        background: none;
+        color: black;
+        border-bottom: 2px solid black;
+    }
+    
+    .btn-refresh,
+    .btn-upload,
+    .btn-export,
+    .btn-print,
+    .btn-clear,
+    .upload-remove {
+        display: none;
+    }
+    
+    .phase-content {
+        display: block !important;
+    }
+    
+    .confluence-links a {
+        color: black;
+        border: 1px solid black;
+    }
+    
+    .metric-card,
+    .issue-card,
+    .phase-card {
+        box-shadow: none;
+        border: 1px solid black;
+    }
+    
+    .checklist-item input[type="checkbox"]:checked + label {
+        color: black;
+        font-weight: bold;
+    }
+}

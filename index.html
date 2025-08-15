@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MileIQ Webflow Migration Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section with Confluence Links -->
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-exchange-alt"></i> MileIQ Webflow Migration Hub</h1>
+            <p class="subtitle">Real-time monitoring, interactive checklists, and centralized documentation</p>
+        </div>
+    </header>
+
+    <!-- Confluence Documentation Links -->
+    <section class="confluence-section">
+        <div class="container">
+            <h2><i class="fas fa-file-alt"></i> SEO Documentation Hub</h2>
+            <div class="confluence-links">
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1730904065/Programmatic+SEO+Project+Brief" target="_blank">
+                    <i class="fas fa-link"></i> Programmatic SEO Project Brief
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1934524483/SEO+Strategy+Overview+MileIQ+Aligned" target="_blank">
+                    <i class="fas fa-link"></i> SEO Strategy Overview – MileIQ Aligned
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1935114259/Why+http+MileIQ.com+is+losing+rankings+comprehensive+SEO+analysis" target="_blank">
+                    <i class="fas fa-link"></i> Why MileIQ.com is losing rankings: comprehensive SEO analysis
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1871642708/Bounce+Rate+Analysis+and+SEO+Recommendations+for+MileIQ" target="_blank">
+                    <i class="fas fa-link"></i> Bounce Rate Analysis and SEO Recommendations
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1872035881/CTR+Drop+Pages+-+Investigation" target="_blank">
+                    <i class="fas fa-link"></i> CTR Drop Pages - Investigation
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1909981243/MileIQ+AI+Search+Optimization+Report+-+Technical+Implementation+Guide" target="_blank">
+                    <i class="fas fa-link"></i> MileIQ AI Search Optimization Report
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1883766830/Comprehensive+SEO+Glossary+Barnacle+SEO+Advanced+Terms" target="_blank">
+                    <i class="fas fa-link"></i> Comprehensive SEO Glossary
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1871937581/MileIQ+Website+Repositioning+Optimization+Plan+2025" target="_blank">
+                    <i class="fas fa-link"></i> Website Repositioning & Optimization Plan (2025)
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1872134173/Mileage+Reimbursement+Calculator" target="_blank">
+                    <i class="fas fa-link"></i> Mileage Reimbursement Calculator
+                </a>
+                <a href="https://mileiq.atlassian.net/wiki/spaces/e0c31bac6d044e38a24469a16ae6162a/pages/1871446093/Resolving+Keyword+Cannibalization+A+Strategic+Plan+for+MileIQ+s+Individuals+and+Teams+Sections" target="_blank">
+                    <i class="fas fa-link"></i> Resolving Keyword Cannibalization
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Migration Roadmap Visualization -->
+    <section class="roadmap-section">
+        <div class="container">
+            <h2><i class="fas fa-route"></i> Migration Journey Roadmap</h2>
+            <div class="roadmap-container">
+                <div class="roadmap-timeline">
+                    <!-- Phase 1: Discovery & Planning -->
+                    <div class="roadmap-phase" id="roadmap-phase-1">
+                        <div class="phase-marker active">
+                            <div class="marker-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="marker-label">Discovery</div>
+                        </div>
+                        <div class="phase-details">
+                            <h4>Week 1-2: Discovery & Analysis</h4>
+                            <ul>
+                                <li>SEO audit & baseline metrics</li>
+                                <li>Content inventory</li>
+                                <li>Technical requirements</li>
+                                <li>Risk assessment</li>
+                            </ul>
+                            <div class="phase-status">
+                                <span class="status-dot active"></span>
+                                <span>In Progress</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-connector"></div>
+
+                    <!-- Phase 2: Planning & Preparation -->
+                    <div class="roadmap-phase" id="roadmap-phase-2">
+                        <div class="phase-marker">
+                            <div class="marker-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="marker-label">Planning</div>
+                        </div>
+                        <div class="phase-details">
+                            <h4>Week 3-4: Strategic Planning</h4>
+                            <ul>
+                                <li>URL mapping strategy</li>
+                                <li>Content migration plan</li>
+                                <li>301 redirect mapping</li>
+                                <li>Staging environment setup</li>
+                            </ul>
+                            <div class="phase-status">
+                                <span class="status-dot"></span>
+                                <span>Upcoming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-connector"></div>
+
+                    <!-- Phase 3: Development -->
+                    <div class="roadmap-phase" id="roadmap-phase-3">
+                        <div class="phase-marker">
+                            <div class="marker-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="marker-label">Development</div>
+                        </div>
+                        <div class="phase-details">
+                            <h4>Week 5-8: Build & Configure</h4>
+                            <ul>
+                                <li>Webflow site development</li>
+                                <li>Content migration</li>
+                                <li>Integration setup</li>
+                                <li>Custom functionality</li>
+                            </ul>
+                            <div class="phase-status">
+                                <span class="status-dot"></span>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-connector"></div>
+
+                    <!-- Phase 4: Testing -->
+                    <div class="roadmap-phase" id="roadmap-phase-4">
+                        <div class="phase-marker">
+                            <div class="marker-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div class="marker-label">Testing</div>
+                        </div>
+                        <div class="phase-details">
+                            <h4>Week 9-10: Quality Assurance</h4>
+                            <ul>
+                                <li>Functionality testing</li>
+                                <li>SEO validation</li>
+                                <li>Performance testing</li>
+                                <li>Cross-browser testing</li>
+                            </ul>
+                            <div class="phase-status">
+                                <span class="status-dot"></span>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-connector"></div>
+
+                    <!-- Phase 5: Migration -->
+                    <div class="roadmap-phase" id="roadmap-phase-5">
+                        <div class="phase-marker">
+                            <div class="marker-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="marker-label">Migration</div>
+                        </div>
+                        <div class="phase-details">
+                            <h4>Week 11: Go Live</h4>
+                            <ul>
+                                <li>DNS cutover</li>
+                                <li>Redirect activation</li>
+                                <li>SSL configuration</li>
+                                <li>Launch monitoring</li>
+                            </ul>
+                            <div class="phase-status">
+                                <span class="status-dot"></span>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-connector"></div>
+
+                    <!-- Phase 6: Optimization -->
+                    <div class="roadmap-phase" id="roadmap-phase-6">
+                        <div class="phase-marker">
+                            <div class="marker-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="marker-label">Optimization</div>
+                        </div>
+                        <div class="phase-details">
+                            <h4>Week 12+: Post-Launch</h4>
+                            <ul>
+                                <li>Performance monitoring</li>
+                                <li>SEO recovery tracking</li>
+                                <li>Issue resolution</li>
+                                <li>Continuous improvement</li>
+                            </ul>
+                            <div class="phase-status">
+                                <span class="status-dot"></span>
+                                <span>Future</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone Summary -->
+                <div class="milestone-summary">
+                    <h3><i class="fas fa-flag-checkered"></i> Key Milestones</h3>
+                    <div class="milestone-grid">
+                        <div class="milestone-card">
+                            <div class="milestone-date">Week 2</div>
+                            <div class="milestone-title">Baseline Established</div>
+                            <div class="milestone-progress">
+                                <div class="progress-mini" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-date">Week 4</div>
+                            <div class="milestone-title">Planning Complete</div>
+                            <div class="milestone-progress">
+                                <div class="progress-mini" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-date">Week 8</div>
+                            <div class="milestone-title">Development Done</div>
+                            <div class="milestone-progress">
+                                <div class="progress-mini" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-date">Week 10</div>
+                            <div class="milestone-title">Testing Complete</div>
+                            <div class="milestone-progress">
+                                <div class="progress-mini" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-date">Week 11</div>
+                            <div class="milestone-title">Site Live</div>
+                            <div class="milestone-progress">
+                                <div class="progress-mini" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-date">Week 16</div>
+                            <div class="milestone-title">SEO Recovery</div>
+                            <div class="milestone-progress">
+                                <div class="progress-mini" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Path Visualization -->
+                <div class="critical-path">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Critical Path Items</h3>
+                    <div class="path-timeline">
+                        <div class="path-item completed">
+                            <div class="path-marker"></div>
+                            <div class="path-content">
+                                <strong>Current Site Backup</strong>
+                                <span>Complete backup of existing site</span>
+                            </div>
+                        </div>
+                        <div class="path-item active">
+                            <div class="path-marker"></div>
+                            <div class="path-content">
+                                <strong>SEO Baseline Documentation</strong>
+                                <span>Record all current metrics</span>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-marker"></div>
+                            <div class="path-content">
+                                <strong>301 Redirect Map</strong>
+                                <span>Complete URL mapping</span>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-marker"></div>
+                            <div class="path-content">
+                                <strong>Content Migration</strong>
+                                <span>Transfer all content & meta data</span>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-marker"></div>
+                            <div class="path-content">
+                                <strong>Pre-Launch Testing</strong>
+                                <span>Validate all functionality</span>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-marker"></div>
+                            <div class="path-content">
+                                <strong>DNS Cutover</strong>
+                                <span>Switch to new site</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Data Dashboard -->
+    <section class="dashboard-section">
+        <div class="container">
+            <h2><i class="fas fa-chart-line"></i> Real-time SEO Monitoring Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-search"></i>
+                        <span>Google Search Console</span>
+                    </div>
+                    <div class="metric-content">
+                        <div class="metric-item">
+                            <span class="metric-label">Impressions (30d)</span>
+                            <span class="metric-value" id="gsc-impressions">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Clicks (30d)</span>
+                            <span class="metric-value" id="gsc-clicks">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Avg. CTR</span>
+                            <span class="metric-value" id="gsc-ctr">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Avg. Position</span>
+                            <span class="metric-value" id="gsc-position">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Google Analytics</span>
+                    </div>
+                    <div class="metric-content">
+                        <div class="metric-item">
+                            <span class="metric-label">Organic Traffic</span>
+                            <span class="metric-value" id="ga-traffic">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Bounce Rate</span>
+                            <span class="metric-value" id="ga-bounce">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Avg. Session</span>
+                            <span class="metric-value" id="ga-session">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Conversions</span>
+                            <span class="metric-value" id="ga-conversions">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Core Web Vitals</span>
+                    </div>
+                    <div class="metric-content">
+                        <div class="metric-item">
+                            <span class="metric-label">LCP</span>
+                            <span class="metric-value" id="cwv-lcp">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">FID</span>
+                            <span class="metric-value" id="cwv-fid">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">CLS</span>
+                            <span class="metric-value" id="cwv-cls">--</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Score</span>
+                            <span class="metric-value" id="cwv-score">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-trophy"></i>
+                        <span>Top Rankings</span>
+                    </div>
+                    <div class="metric-content" id="top-rankings">
+                        <div class="ranking-item">
+                            <span class="keyword">Loading...</span>
+                            <span class="position">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-refresh" onclick="refreshDashboard()">
+                <i class="fas fa-sync"></i> Refresh Data
+            </button>
+        </div>
+    </section>
+
+    <!-- Critical Issues Section -->
+    <section class="issues-section">
+        <div class="container">
+            <h2><i class="fas fa-exclamation-triangle"></i> Critical Webflow Migration Issues</h2>
+            
+            <div class="issues-grid">
+                <div class="issue-card high-risk">
+                    <h3>🚨 High-Risk SEO Issues</h3>
+                    <ul>
+                        <li><strong>URL Structure Changes:</strong> Webflow auto-generates clean URLs that may differ from current structure</li>
+                        <li><strong>301 Redirect Failures:</strong> Most traffic loss occurs from broken redirects during migration</li>
+                        <li><strong>Meta Data Loss:</strong> Titles, descriptions, and structured data often get lost in transfer</li>
+                        <li><strong>Content Gaps:</strong> Missing content during transfer causes indexing issues</li>
+                        <li><strong>Site Speed Changes:</strong> Performance variations affect Core Web Vitals</li>
+                        <li><strong>Internal Link Breaks:</strong> Link structure changes can damage link equity</li>
+                    </ul>
+                </div>
+
+                <div class="issue-card technical">
+                    <h3>🔧 Technical Challenges</h3>
+                    <ul>
+                        <li><strong>CMS Structure Mapping:</strong> Content fields may not map 1:1 between systems</li>
+                        <li><strong>Custom Code Transfer:</strong> Webflow has limitations with custom scripts</li>
+                        <li><strong>Third-party Integrations:</strong> Analytics, forms, and tools need reconfiguration</li>
+                        <li><strong>Image/Media Migration:</strong> Asset optimization and CDN setup</li>
+                        <li><strong>Indexing Problems:</strong> Search engines struggle to re-crawl changed sites</li>
+                        <li><strong>Duplicate Content Risk:</strong> Temporary duplicate content during transition</li>
+                    </ul>
+                </div>
+
+                <div class="issue-card webflow-specific">
+                    <h3>⚠️ Webflow-Specific Issues</h3>
+                    <ul>
+                        <li>Webflow's automatic <code>/blog</code> folder structure affects URL hierarchy</li>
+                        <li>Limited control over HTML structure compared to WordPress</li>
+                        <li>CSS/JS bundling differences affect page load times</li>
+                        <li>Form handling changes require new integration setup</li>
+                        <li>Limited plugin ecosystem compared to current platform</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Migration Checklist -->
+    <section class="checklist-section">
+        <div class="container">
+            <h2><i class="fas fa-tasks"></i> Migration Checklist</h2>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="overall-progress">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <span class="progress-text" id="progress-text">0% Complete</span>
+                </div>
+            </div>
+
+            <!-- Checklist Phases -->
+            <div class="checklist-phases">
+                <!-- Pre-Migration Phase -->
+                <div class="phase-card" id="pre-migration">
+                    <div class="phase-header" onclick="togglePhase('pre-migration')">
+                        <h3><i class="fas fa-calendar-minus"></i> PRE-MIGRATION (30-45 days before)</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="phase-content">
+                        <div class="checklist-group">
+                            <h4>SEO Baseline Documentation</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-1-1" onchange="saveProgress()">
+                                <label for="pre-1-1">Export current sitemap and URL structure</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-1-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-1-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-1-2" onchange="saveProgress()">
+                                <label for="pre-1-2">Document all current rankings (top 100 keywords)</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-1-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-1-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-1-3" onchange="saveProgress()">
+                                <label for="pre-1-3">Backup all meta titles, descriptions, and structured data</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-1-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-1-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-1-4" onchange="saveProgress()">
+                                <label for="pre-1-4">Audit current backlink profile</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-1-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-1-4"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-1-5" onchange="saveProgress()">
+                                <label for="pre-1-5">Screenshot current Search Console performance</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-1-5')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-1-5"></div>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h4>Content Audit & Mapping</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-2-1" onchange="saveProgress()">
+                                <label for="pre-2-1">Inventory all existing content and assets</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-2-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-2-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-2-2" onchange="saveProgress()">
+                                <label for="pre-2-2">Map content fields from current CMS to new structure</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-2-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-2-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-2-3" onchange="saveProgress()">
+                                <label for="pre-2-3">Identify content that won't be migrated</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-2-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-2-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-2-4" onchange="saveProgress()">
+                                <label for="pre-2-4">Plan new URL structure and redirect mapping</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-2-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-2-4"></div>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h4>Technical Infrastructure Prep</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-3-1" onchange="saveProgress()">
+                                <label for="pre-3-1">Set up staging environment on new CMS</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-3-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-3-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-3-2" onchange="saveProgress()">
+                                <label for="pre-3-2">Configure SSL certificates and security</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-3-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-3-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-3-3" onchange="saveProgress()">
+                                <label for="pre-3-3">Plan database migration strategy</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-3-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-3-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="pre-3-4" onchange="saveProgress()">
+                                <label for="pre-3-4">Test all integrations (Analytics, CRM, forms)</label>
+                                <button class="btn-upload" onclick="uploadFile('pre-3-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-pre-3-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- During Migration Phase -->
+                <div class="phase-card" id="during-migration">
+                    <div class="phase-header" onclick="togglePhase('during-migration')">
+                        <h3><i class="fas fa-cogs"></i> DURING MIGRATION (Migration Week)</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="phase-content">
+                        <div class="checklist-group">
+                            <h4>Content Transfer & Setup</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-1-1" onchange="saveProgress()">
+                                <label for="during-1-1">Migrate content following documented mapping</label>
+                                <button class="btn-upload" onclick="uploadFile('during-1-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-1-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-1-2" onchange="saveProgress()">
+                                <label for="during-1-2">Implement new URL structure</label>
+                                <button class="btn-upload" onclick="uploadFile('during-1-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-1-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-1-3" onchange="saveProgress()">
+                                <label for="during-1-3">Set up 301 redirects (create redirect map)</label>
+                                <button class="btn-upload" onclick="uploadFile('during-1-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-1-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-1-4" onchange="saveProgress()">
+                                <label for="during-1-4">Configure all meta data and structured markup</label>
+                                <button class="btn-upload" onclick="uploadFile('during-1-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-1-4"></div>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h4>Technical Implementation</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-2-1" onchange="saveProgress()">
+                                <label for="during-2-1">Install and configure all tracking codes</label>
+                                <button class="btn-upload" onclick="uploadFile('during-2-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-2-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-2-2" onchange="saveProgress()">
+                                <label for="during-2-2">Set up Google Analytics and Search Console</label>
+                                <button class="btn-upload" onclick="uploadFile('during-2-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-2-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-2-3" onchange="saveProgress()">
+                                <label for="during-2-3">Test all forms and interactive elements</label>
+                                <button class="btn-upload" onclick="uploadFile('during-2-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-2-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-2-4" onchange="saveProgress()">
+                                <label for="during-2-4">Implement security measures and backups</label>
+                                <button class="btn-upload" onclick="uploadFile('during-2-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-2-4"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-2-5" onchange="saveProgress()">
+                                <label for="during-2-5">Configure CDN and caching</label>
+                                <button class="btn-upload" onclick="uploadFile('during-2-5')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-2-5"></div>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h4>Quality Assurance Testing</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-3-1" onchange="saveProgress()">
+                                <label for="during-3-1">Test all redirects and internal links</label>
+                                <button class="btn-upload" onclick="uploadFile('during-3-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-3-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-3-2" onchange="saveProgress()">
+                                <label for="during-3-2">Verify page load speeds and Core Web Vitals</label>
+                                <button class="btn-upload" onclick="uploadFile('during-3-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-3-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-3-3" onchange="saveProgress()">
+                                <label for="during-3-3">Check mobile responsiveness</label>
+                                <button class="btn-upload" onclick="uploadFile('during-3-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-3-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-3-4" onchange="saveProgress()">
+                                <label for="during-3-4">Test user journeys and conversion funnels</label>
+                                <button class="btn-upload" onclick="uploadFile('during-3-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-3-4"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="during-3-5" onchange="saveProgress()">
+                                <label for="during-3-5">Validate structured data and rich snippets</label>
+                                <button class="btn-upload" onclick="uploadFile('during-3-5')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-during-3-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post-Migration Phase -->
+                <div class="phase-card" id="post-migration">
+                    <div class="phase-header" onclick="togglePhase('post-migration')">
+                        <h3><i class="fas fa-rocket"></i> POST-MIGRATION (30-90 days after)</h3>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="phase-content">
+                        <div class="checklist-group">
+                            <h4>Launch & Monitoring</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-1-1" onchange="saveProgress()">
+                                <label for="post-1-1">Submit new sitemap to Search Console</label>
+                                <button class="btn-upload" onclick="uploadFile('post-1-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-1-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-1-2" onchange="saveProgress()">
+                                <label for="post-1-2">Monitor for 404 errors and fix immediately</label>
+                                <button class="btn-upload" onclick="uploadFile('post-1-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-1-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-1-3" onchange="saveProgress()">
+                                <label for="post-1-3">Track ranking changes and traffic patterns</label>
+                                <button class="btn-upload" onclick="uploadFile('post-1-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-1-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-1-4" onchange="saveProgress()">
+                                <label for="post-1-4">Set up automated monitoring alerts</label>
+                                <button class="btn-upload" onclick="uploadFile('post-1-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-1-4"></div>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h4>Performance Optimization</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-2-1" onchange="saveProgress()">
+                                <label for="post-2-1">Optimize images and media for new platform</label>
+                                <button class="btn-upload" onclick="uploadFile('post-2-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-2-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-2-2" onchange="saveProgress()">
+                                <label for="post-2-2">Fine-tune caching and CDN settings</label>
+                                <button class="btn-upload" onclick="uploadFile('post-2-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-2-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-2-3" onchange="saveProgress()">
+                                <label for="post-2-3">Address any Core Web Vitals issues</label>
+                                <button class="btn-upload" onclick="uploadFile('post-2-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-2-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-2-4" onchange="saveProgress()">
+                                <label for="post-2-4">Monitor and improve conversion rates</label>
+                                <button class="btn-upload" onclick="uploadFile('post-2-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-2-4"></div>
+                            </div>
+                        </div>
+
+                        <div class="checklist-group">
+                            <h4>Long-term Monitoring (90+ days)</h4>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-3-1" onchange="saveProgress()">
+                                <label for="post-3-1">Weekly SEO performance reviews</label>
+                                <button class="btn-upload" onclick="uploadFile('post-3-1')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-3-1"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-3-2" onchange="saveProgress()">
+                                <label for="post-3-2">Quarterly content and technical audits</label>
+                                <button class="btn-upload" onclick="uploadFile('post-3-2')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-3-2"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-3-3" onchange="saveProgress()">
+                                <label for="post-3-3">Ongoing backlink profile monitoring</label>
+                                <button class="btn-upload" onclick="uploadFile('post-3-3')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-3-3"></div>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="post-3-4" onchange="saveProgress()">
+                                <label for="post-3-4">Regular performance optimization</label>
+                                <button class="btn-upload" onclick="uploadFile('post-3-4')">
+                                    <i class="fas fa-upload"></i> Upload
+                                </button>
+                                <div class="upload-list" id="uploads-post-3-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-export" onclick="exportChecklist()">
+                    <i class="fas fa-download"></i> Export Checklist
+                </button>
+                <button class="btn-print" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Report
+                </button>
+                <button class="btn-clear" onclick="clearProgress()">
+                    <i class="fas fa-trash"></i> Clear All Progress
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <h2><i class="fas fa-bullseye"></i> Success Metrics & Alerts</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-target">
+                    <i class="fas fa-traffic-light"></i>
+                    <h4>Traffic Retention</h4>
+                    <p>Maintain 95%+ of organic traffic within 30 days</p>
+                    <div class="status-indicator" id="traffic-status">
+                        <span class="status-badge">Monitoring</span>
+                    </div>
+                </div>
+                
+                <div class="metric-target">
+                    <i class="fas fa-link"></i>
+                    <h4>404 Errors</h4>
+                    <p>Zero critical 404 errors after week 1</p>
+                    <div class="status-indicator" id="error-status">
+                        <span class="status-badge">Monitoring</span>
+                    </div>
+                </div>
+                
+                <div class="metric-target">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4>Core Web Vitals</h4>
+                    <p>Scores equal or better than baseline</p>
+                    <div class="status-indicator" id="vitals-status">
+                        <span class="status-badge">Monitoring</span>
+                    </div>
+                </div>
+                
+                <div class="metric-target">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Keyword Rankings</h4>
+                    <p>Priority keywords maintain ±3 positions</p>
+                    <div class="status-indicator" id="ranking-status">
+                        <span class="status-badge">Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MileIQ Migration Hub | Last Updated: <span id="last-updated"></span></p>
+        </div>
+    </footer>
+
+    <!-- Hidden file input for uploads -->
+    <input type="file" id="file-input" style="display: none;" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.gif,.txt,.csv">
+
+    <script src="script.js"></script>
+</body>
+</html>
