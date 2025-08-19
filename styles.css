@@ -650,7 +650,6 @@ code {
     position: relative;
     z-index: 2;
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .phase-marker.active {
@@ -691,8 +690,8 @@ code {
     box-shadow: var(--shadow);
     margin-top: 2.5rem;
     text-align: left;
-    opacity: 0;
-    animation: fadeIn 0.5s ease 0.3s forwards;
+    opacity: 1;
+    display: block;
 }
 
 .phase-details h4 {
@@ -743,13 +742,7 @@ code {
 }
 
 .timeline-connector {
-    position: absolute;
-    top: 40px;
-    width: calc(100% - 200px);
-    height: 3px;
-    background: linear-gradient(90deg, var(--border-color) 50%, transparent 50%);
-    background-size: 10px 3px;
-    z-index: 1;
+    display: none;
 }
 
 /* Milestone Summary */
