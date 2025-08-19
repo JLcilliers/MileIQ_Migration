@@ -360,8 +360,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check if API credentials are configured
     if (API_CONFIG.CLIENT_ID === 'YOUR_CLIENT_ID.apps.googleusercontent.com' || 
-        API_CONFIG.API_KEY === 'YOUR_API_KEY') {
-        showNotification('Please configure your Google API credentials in api-config.js', 'warning');
+        API_CONFIG.API_KEY === 'YOUR_API_KEY' ||
+        API_CONFIG.GA_VIEW_ID === 'YOUR_VIEW_ID') {
+        console.log('Google API integration disabled - using mock data');
         return;
     }
     
