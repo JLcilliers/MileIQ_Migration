@@ -187,82 +187,115 @@
     <section class="roadmap-section">
         <div class="container">
             <h2><i class="fas fa-route"></i> Migration Journey Roadmap</h2>
+            
+            <!-- Overall Progress Bar -->
+            <div class="roadmap-progress">
+                <div class="roadmap-stats">
+                    <span class="stat">Started: Jan 1</span>
+                    <span class="stat current">Current: Week 3</span>
+                    <span class="stat">Est. Completion: Apr 1</span>
+                </div>
+                <div class="roadmap-progress-bar">
+                    <div class="roadmap-progress-fill" style="width: 33%;"></div>
+                    <span class="roadmap-progress-text">2 of 6 phases complete (33%)</span>
+                </div>
+                <div class="roadmap-quick-stats">
+                    <span class="quick-stat"><i class="fas fa-check"></i> 12 tasks completed</span>
+                    <span class="quick-stat"><i class="fas fa-spinner"></i> 8 in progress</span>
+                    <span class="quick-stat"><i class="fas fa-clock"></i> 24 remaining</span>
+                </div>
+            </div>
+            
             <div class="roadmap-container">
+                <!-- Connected Timeline -->
                 <div class="roadmap-timeline">
-                    <!-- Phase 1: Discovery & Planning -->
-                    <div class="roadmap-phase" id="roadmap-phase-1">
-                        <div class="phase-marker active">
-                            <div class="marker-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="marker-label">Discovery</div>
-                        </div>
-                        <div class="phase-details">
-                            <h4>Week 1-2: Discovery & Analysis</h4>
-                            <ul>
-                                <li>SEO audit & baseline metrics</li>
-                                <li>Content inventory</li>
-                                <li>Technical requirements</li>
-                                <li>Risk assessment</li>
-                            </ul>
-                            <div class="phase-status">
-                                <span class="status-dot active"></span>
-                                <span>In Progress</span>
-                            </div>
-                        </div>
+                    <!-- Connected Progress Line -->
+                    <div class="timeline-progress-line">
+                        <div class="timeline-progress-fill" style="width: 33%;"></div>
                     </div>
-
-                    <div class="timeline-connector"></div>
-
-                    <!-- Phase 2: Planning & Preparation -->
-                    <div class="roadmap-phase" id="roadmap-phase-2">
+                    
+                    <!-- Phase 1: Discovery -->
+                    <div class="roadmap-phase completed" id="roadmap-phase-1" data-phase="1">
                         <div class="phase-marker">
-                            <div class="marker-icon">
-                                <i class="fas fa-clipboard-list"></i>
-                            </div>
-                            <div class="marker-label">Planning</div>
+                            <div class="phase-status-badge">✓</div>
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="phase-info">
+                            <h4 class="phase-name">Discovery</h4>
+                            <span class="phase-timeline">Week 1-2</span>
+                            <span class="phase-status-text completed">Completed</span>
                         </div>
                         <div class="phase-details">
-                            <h4>Week 3-4: Strategic Planning</h4>
-                            <ul>
-                                <li>URL mapping strategy</li>
-                                <li>Content migration plan</li>
-                                <li>301 redirect mapping</li>
-                                <li>Staging environment setup</li>
-                            </ul>
-                            <div class="phase-status">
-                                <span class="status-dot"></span>
-                                <span>Upcoming</span>
+                            <div class="task-summary">
+                                <span class="task-count">4 tasks</span>
+                                <button class="expand-tasks" onclick="togglePhaseTasks('phase-1')">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="phase-tasks" id="phase-1-tasks">
+                                <label class="task-item"><input type="checkbox" checked disabled> SEO audit & baseline metrics</label>
+                                <label class="task-item"><input type="checkbox" checked disabled> Content inventory</label>
+                                <label class="task-item"><input type="checkbox" checked disabled> Technical requirements</label>
+                                <label class="task-item"><input type="checkbox" checked disabled> Risk assessment</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-connector"></div>
+                    <!-- Phase 2: Planning -->
+                    <div class="roadmap-phase completed" id="roadmap-phase-2" data-phase="2">
+                        <div class="phase-marker">
+                            <div class="phase-status-badge">✓</div>
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="phase-info">
+                            <h4 class="phase-name">Planning</h4>
+                            <span class="phase-timeline">Week 3-4</span>
+                            <span class="phase-status-text completed">Completed</span>
+                        </div>
+                        <div class="phase-details">
+                            <div class="task-summary">
+                                <span class="task-count">4 tasks</span>
+                                <button class="expand-tasks" onclick="togglePhaseTasks('phase-2')">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="phase-tasks" id="phase-2-tasks">
+                                <label class="task-item"><input type="checkbox" checked disabled> URL mapping strategy</label>
+                                <label class="task-item"><input type="checkbox" checked disabled> Content migration plan</label>
+                                <label class="task-item"><input type="checkbox" checked disabled> 301 redirect mapping</label>
+                                <label class="task-item"><input type="checkbox" checked disabled> Staging environment setup</label>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <!-- Phase 3: Development -->
-                    <div class="roadmap-phase" id="roadmap-phase-3">
-                        <div class="phase-marker">
-                            <div class="marker-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="marker-label">Development</div>
+                    <div class="roadmap-phase current" id="roadmap-phase-3" data-phase="3">
+                        <div class="phase-marker pulse">
+                            <div class="phase-status-badge">⚡</div>
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="phase-info">
+                            <h4 class="phase-name">Development</h4>
+                            <span class="phase-timeline">Week 5-8</span>
+                            <span class="phase-status-text current">In Progress</span>
                         </div>
                         <div class="phase-details">
-                            <h4>Week 5-8: Build & Configure</h4>
-                            <ul>
-                                <li>Webflow site development</li>
-                                <li>Content migration</li>
-                                <li>Integration setup</li>
-                                <li>Custom functionality</li>
-                            </ul>
-                            <div class="phase-status">
-                                <span class="status-dot"></span>
-                                <span>Pending</span>
+                            <div class="task-summary">
+                                <span class="task-count">4 tasks</span>
+                                <button class="expand-tasks" onclick="togglePhaseTasks('phase-3')">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <div class="phase-tasks" id="phase-3-tasks">
+                                <label class="task-item"><input type="checkbox" onchange="saveProgress()"> Webflow site development</label>
+                                <label class="task-item"><input type="checkbox" onchange="saveProgress()"> Content migration</label>
+                                <label class="task-item"><input type="checkbox" onchange="saveProgress()"> Integration setup</label>
+                                <label class="task-item"><input type="checkbox" onchange="saveProgress()"> Custom functionality</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-connector"></div>
 
                     <!-- Phase 4: Testing -->
                     <div class="roadmap-phase" id="roadmap-phase-4">
@@ -287,7 +320,6 @@
                         </div>
                     </div>
 
-                    <div class="timeline-connector"></div>
 
                     <!-- Phase 5: Migration -->
                     <div class="roadmap-phase" id="roadmap-phase-5">
@@ -312,7 +344,6 @@
                         </div>
                     </div>
 
-                    <div class="timeline-connector"></div>
 
                     <!-- Phase 6: Optimization -->
                     <div class="roadmap-phase" id="roadmap-phase-6">
@@ -338,99 +369,210 @@
                     </div>
                 </div>
 
-                <!-- Milestone Summary -->
-                <div class="milestone-summary">
-                    <h3><i class="fas fa-flag-checkered"></i> Key Milestones</h3>
-                    <div class="milestone-grid">
-                        <div class="milestone-card">
-                            <div class="milestone-date">Week 2</div>
-                            <div class="milestone-title">Baseline Established</div>
-                            <div class="milestone-progress">
-                                <div class="progress-mini" style="width: 75%;"></div>
-                            </div>
+                <!-- Key Milestones Timeline -->
+                <div class="milestones-timeline">
+                    <h3><i class="fas fa-flag-checkered"></i> Key Milestones Timeline</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-line">
+                            <div class="timeline-progress" style="width: 33%;"></div>
                         </div>
-                        <div class="milestone-card">
-                            <div class="milestone-date">Week 4</div>
-                            <div class="milestone-title">Planning Complete</div>
-                            <div class="milestone-progress">
-                                <div class="progress-mini" style="width: 20%;"></div>
+                        <div class="milestone-nodes">
+                            <!-- Milestone 1 -->
+                            <div class="milestone-node completed" data-week="2">
+                                <div class="milestone-marker">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <span class="milestone-date">Week 2</span>
+                                    <span class="milestone-title">Baseline Established</span>
+                                    <span class="milestone-status success">Completed</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="milestone-card">
-                            <div class="milestone-date">Week 8</div>
-                            <div class="milestone-title">Development Done</div>
-                            <div class="milestone-progress">
-                                <div class="progress-mini" style="width: 0%;"></div>
+                            
+                            <!-- Milestone 2 -->
+                            <div class="milestone-node completed" data-week="4">
+                                <div class="milestone-marker">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <span class="milestone-date">Week 4</span>
+                                    <span class="milestone-title">Planning Complete</span>
+                                    <span class="milestone-status success">Completed</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="milestone-card">
-                            <div class="milestone-date">Week 10</div>
-                            <div class="milestone-title">Testing Complete</div>
-                            <div class="milestone-progress">
-                                <div class="progress-mini" style="width: 0%;"></div>
+                            
+                            <!-- Milestone 3 -->
+                            <div class="milestone-node current" data-week="8">
+                                <div class="milestone-marker pulse">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <span class="milestone-date">Week 8</span>
+                                    <span class="milestone-title">Development Done</span>
+                                    <span class="milestone-status warning">In Progress</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="milestone-card">
-                            <div class="milestone-date">Week 11</div>
-                            <div class="milestone-title">Site Live</div>
-                            <div class="milestone-progress">
-                                <div class="progress-mini" style="width: 0%;"></div>
+                            
+                            <!-- Milestone 4 -->
+                            <div class="milestone-node upcoming" data-week="10">
+                                <div class="milestone-marker">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <span class="milestone-date">Week 10</span>
+                                    <span class="milestone-title">Testing Complete</span>
+                                    <span class="milestone-status">Upcoming</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="milestone-card">
-                            <div class="milestone-date">Week 16</div>
-                            <div class="milestone-title">SEO Recovery</div>
-                            <div class="milestone-progress">
-                                <div class="progress-mini" style="width: 0%;"></div>
+                            
+                            <!-- Milestone 5 -->
+                            <div class="milestone-node upcoming" data-week="11">
+                                <div class="milestone-marker">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <span class="milestone-date">Week 11</span>
+                                    <span class="milestone-title">Site Live</span>
+                                    <span class="milestone-status">Upcoming</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Milestone 6 -->
+                            <div class="milestone-node upcoming" data-week="16">
+                                <div class="milestone-marker">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                                <div class="milestone-content">
+                                    <span class="milestone-date">Week 16</span>
+                                    <span class="milestone-title">SEO Recovery</span>
+                                    <span class="milestone-status">Future</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Critical Path Visualization -->
-                <div class="critical-path">
+                <!-- Critical Path Kanban -->
+                <div class="critical-path-kanban">
                     <h3><i class="fas fa-exclamation-triangle"></i> Critical Path Items</h3>
-                    <div class="path-timeline">
-                        <div class="path-item completed">
-                            <div class="path-marker"></div>
-                            <div class="path-content">
-                                <strong>Current Site Backup</strong>
-                                <span>Complete backup of existing site</span>
+                    <div class="kanban-board">
+                        <!-- Completed Column -->
+                        <div class="kanban-column">
+                            <div class="column-header completed">
+                                <i class="fas fa-check-circle"></i>
+                                <h4>Completed</h4>
+                                <span class="task-count">1 task</span>
+                            </div>
+                            <div class="kanban-cards">
+                                <div class="kanban-card completed">
+                                    <div class="card-status-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <h5>Current Site Backup</h5>
+                                    <p>Complete backup of existing site</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 100%;"></div>
+                                        </div>
+                                        <span class="progress-text">100%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="path-item active">
-                            <div class="path-marker"></div>
-                            <div class="path-content">
-                                <strong>SEO Baseline Documentation</strong>
-                                <span>Record all current metrics</span>
+                        
+                        <!-- In Progress Column -->
+                        <div class="kanban-column">
+                            <div class="column-header in-progress">
+                                <i class="fas fa-spinner"></i>
+                                <h4>In Progress</h4>
+                                <span class="task-count">2 tasks</span>
+                            </div>
+                            <div class="kanban-cards">
+                                <div class="kanban-card in-progress">
+                                    <div class="card-status-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h5>SEO Baseline Documentation</h5>
+                                    <p>Record all current metrics</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 75%;"></div>
+                                        </div>
+                                        <span class="progress-text">75%</span>
+                                    </div>
+                                </div>
+                                <div class="kanban-card in-progress">
+                                    <div class="card-status-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h5>301 Redirect Map</h5>
+                                    <p>Complete URL mapping</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 25%;"></div>
+                                        </div>
+                                        <span class="progress-text">25%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="path-item">
-                            <div class="path-marker"></div>
-                            <div class="path-content">
-                                <strong>301 Redirect Map</strong>
-                                <span>Complete URL mapping</span>
+                        
+                        <!-- Pending Column -->
+                        <div class="kanban-column">
+                            <div class="column-header pending">
+                                <i class="fas fa-clock"></i>
+                                <h4>Pending</h4>
+                                <span class="task-count">2 tasks</span>
+                            </div>
+                            <div class="kanban-cards">
+                                <div class="kanban-card pending">
+                                    <div class="card-status-icon">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <h5>Content Migration</h5>
+                                    <p>Transfer all content & meta data</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 0%;"></div>
+                                        </div>
+                                        <span class="progress-text">0%</span>
+                                    </div>
+                                </div>
+                                <div class="kanban-card pending">
+                                    <div class="card-status-icon">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <h5>Pre-Launch Testing</h5>
+                                    <p>Validate all functionality</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 0%;"></div>
+                                        </div>
+                                        <span class="progress-text">0%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="path-item">
-                            <div class="path-marker"></div>
-                            <div class="path-content">
-                                <strong>Content Migration</strong>
-                                <span>Transfer all content & meta data</span>
+                        
+                        <!-- Blocked Column -->
+                        <div class="kanban-column">
+                            <div class="column-header blocked">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h4>Blocked</h4>
+                                <span class="task-count">1 task</span>
                             </div>
-                        </div>
-                        <div class="path-item">
-                            <div class="path-marker"></div>
-                            <div class="path-content">
-                                <strong>Pre-Launch Testing</strong>
-                                <span>Validate all functionality</span>
-                            </div>
-                        </div>
-                        <div class="path-item">
-                            <div class="path-marker"></div>
-                            <div class="path-content">
-                                <strong>DNS Cutover</strong>
-                                <span>Switch to new site</span>
+                            <div class="kanban-cards">
+                                <div class="kanban-card blocked">
+                                    <div class="card-status-icon">
+                                        <i class="fas fa-ban"></i>
+                                    </div>
+                                    <h5>DNS Cutover</h5>
+                                    <p>Waiting for approval</p>
+                                    <div class="card-alert">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>Requires stakeholder approval</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
