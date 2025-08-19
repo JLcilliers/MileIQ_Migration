@@ -727,110 +727,306 @@
     <!-- Risk Assessment Matrix -->
     <section class="risk-assessment" id="risk-assessment">
         <div class="container">
-            <h2><i class="fas fa-shield-alt"></i> Risk Assessment Matrix</h2>
-            <div class="risk-matrix-container">
-                <div class="risk-grid">
-                    <div class="risk-header impact">Impact →</div>
-                    <div class="risk-header likelihood">↑ Likelihood</div>
-                    <div class="risk-label low-impact">Low</div>
-                    <div class="risk-label med-impact">Medium</div>
-                    <div class="risk-label high-impact">High</div>
+            <h2><i class="fas fa-shield-alt"></i> Risk Assessment & Mitigation Tracker</h2>
+            
+            <div class="risk-container">
+                <!-- Main Risk Matrix -->
+                <div class="risk-matrix-section">
+                    <h3>Risk Heat Map</h3>
+                    <div class="risk-matrix">
+                        <!-- Matrix Headers -->
+                        <div class="matrix-corner"></div>
+                        <div class="matrix-header">Low Impact</div>
+                        <div class="matrix-header">Medium Impact</div>
+                        <div class="matrix-header">High Impact</div>
+                        
+                        <!-- High Probability Row -->
+                        <div class="matrix-label">High<br>Probability</div>
+                        <div class="matrix-cell medium-risk">
+                            <div class="risk-items">
+                                <div class="risk-dot" title="CSS Issues">●</div>
+                                <span class="risk-count">1</span>
+                            </div>
+                        </div>
+                        <div class="matrix-cell high-risk">
+                            <div class="risk-items">
+                                <div class="risk-dot" title="Content Gaps">●</div>
+                                <div class="risk-dot" title="Meta Data Loss">●</div>
+                                <span class="risk-count">2</span>
+                            </div>
+                        </div>
+                        <div class="matrix-cell critical-risk">
+                            <div class="risk-items">
+                                <div class="risk-dot" title="301 Redirect Failures">●</div>
+                                <div class="risk-dot" title="Search Rankings Drop">●</div>
+                                <div class="risk-dot" title="URL Structure Changes">●</div>
+                                <span class="risk-count">3</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Medium Probability Row -->
+                        <div class="matrix-label">Medium<br>Probability</div>
+                        <div class="matrix-cell low-risk">
+                            <div class="risk-items">
+                                <span class="risk-count">0</span>
+                            </div>
+                        </div>
+                        <div class="matrix-cell medium-risk">
+                            <div class="risk-items">
+                                <div class="risk-dot" title="Analytics Gap">●</div>
+                                <div class="risk-dot" title="Internal Link Breaks">●</div>
+                                <div class="risk-dot" title="Image Optimization">●</div>
+                                <span class="risk-count">3</span>
+                            </div>
+                        </div>
+                        <div class="matrix-cell high-risk">
+                            <div class="risk-items">
+                                <div class="risk-dot" title="Site Performance">●</div>
+                                <div class="risk-dot" title="Indexing Issues">●</div>
+                                <span class="risk-count">2</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Low Probability Row -->
+                        <div class="matrix-label">Low<br>Probability</div>
+                        <div class="matrix-cell low-risk">
+                            <div class="risk-items">
+                                <div class="risk-dot" title="Minor Styling">●</div>
+                                <div class="risk-dot" title="Form Delays">●</div>
+                                <span class="risk-count">2</span>
+                            </div>
+                        </div>
+                        <div class="matrix-cell low-risk">
+                            <div class="risk-items">
+                                <div class="risk-dot" title="Meta Updates">●</div>
+                                <span class="risk-count">1</span>
+                            </div>
+                        </div>
+                        <div class="matrix-cell medium-risk">
+                            <div class="risk-items">
+                                <span class="risk-count">0</span>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="risk-label high-likelihood">High</div>
-                    <div class="risk-cell medium-risk" data-risk="medium">
-                        <div class="risk-item">
-                            <span class="risk-title">Content Gaps</span>
-                            <span class="risk-desc">Missing pages during migration</span>
+                    <!-- Risk Legend -->
+                    <div class="risk-matrix-legend">
+                        <div class="legend-item">
+                            <span class="legend-color low"></span>
+                            <span>Low (Accept)</span>
                         </div>
-                    </div>
-                    <div class="risk-cell high-risk" data-risk="high">
-                        <div class="risk-item">
-                            <span class="risk-title">301 Redirect Failures</span>
-                            <span class="risk-desc">Broken redirects causing traffic loss</span>
+                        <div class="legend-item">
+                            <span class="legend-color medium"></span>
+                            <span>Medium (Monitor)</span>
                         </div>
-                    </div>
-                    <div class="risk-cell critical-risk" data-risk="critical">
-                        <div class="risk-item">
-                            <span class="risk-title">URL Structure Changes</span>
-                            <span class="risk-desc">Complete URL hierarchy modification</span>
+                        <div class="legend-item">
+                            <span class="legend-color high"></span>
+                            <span>High (Mitigate)</span>
                         </div>
-                    </div>
-                    
-                    <div class="risk-label med-likelihood">Medium</div>
-                    <div class="risk-cell low-risk" data-risk="low">
-                        <div class="risk-item">
-                            <span class="risk-title">Image Optimization</span>
-                            <span class="risk-desc">Slower page load times</span>
-                        </div>
-                    </div>
-                    <div class="risk-cell medium-risk" data-risk="medium">
-                        <div class="risk-item">
-                            <span class="risk-title">Meta Data Loss</span>
-                            <span class="risk-desc">SEO tags not transferred</span>
-                        </div>
-                    </div>
-                    <div class="risk-cell high-risk" data-risk="high">
-                        <div class="risk-item">
-                            <span class="risk-title">Internal Link Breaks</span>
-                            <span class="risk-desc">Damaged link equity</span>
-                        </div>
-                    </div>
-                    
-                    <div class="risk-label low-likelihood">Low</div>
-                    <div class="risk-cell low-risk" data-risk="low">
-                        <div class="risk-item">
-                            <span class="risk-title">CSS Conflicts</span>
-                            <span class="risk-desc">Minor styling issues</span>
-                        </div>
-                    </div>
-                    <div class="risk-cell low-risk" data-risk="low">
-                        <div class="risk-item">
-                            <span class="risk-title">Form Integration</span>
-                            <span class="risk-desc">Contact form setup delays</span>
-                        </div>
-                    </div>
-                    <div class="risk-cell medium-risk" data-risk="medium">
-                        <div class="risk-item">
-                            <span class="risk-title">Analytics Disruption</span>
-                            <span class="risk-desc">Data tracking gaps</span>
+                        <div class="legend-item">
+                            <span class="legend-color critical"></span>
+                            <span>Critical (Urgent)</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="risk-legend">
-                    <h3>Risk Levels & Mitigation Status</h3>
-                    <div class="legend-items">
-                        <div class="legend-item">
-                            <span class="risk-color low"></span>
-                            <span>Low Risk - Monitor</span>
+                <!-- Risk Dashboard Sidebar -->
+                <div class="risk-dashboard">
+                    <h3>Risk Dashboard</h3>
+                    
+                    <!-- Overall Risk Score -->
+                    <div class="risk-score-card">
+                        <div class="score-header">Overall Risk Score</div>
+                        <div class="score-value">
+                            <span class="score-number">7.2</span>
+                            <span class="score-max">/10</span>
                         </div>
-                        <div class="legend-item">
-                            <span class="risk-color medium"></span>
-                            <span>Medium Risk - Plan Mitigation</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="risk-color high"></span>
-                            <span>High Risk - Active Mitigation</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="risk-color critical"></span>
-                            <span>Critical Risk - Immediate Action</span>
+                        <div class="score-indicator high">
+                            <i class="fas fa-exclamation-triangle"></i> High Risk
                         </div>
                     </div>
                     
-                    <div class="mitigation-summary">
-                        <h4>Mitigation Actions</h4>
-                        <div class="mitigation-item">
+                    <!-- Risk Distribution -->
+                    <div class="risk-distribution">
+                        <h4>Risk Distribution</h4>
+                        <div class="distribution-item">
+                            <span class="dist-label">
+                                <span class="dist-color critical"></span>
+                                Critical
+                            </span>
+                            <span class="dist-value">3 (21%)</span>
+                        </div>
+                        <div class="distribution-item">
+                            <span class="dist-label">
+                                <span class="dist-color high"></span>
+                                High
+                            </span>
+                            <span class="dist-value">4 (29%)</span>
+                        </div>
+                        <div class="distribution-item">
+                            <span class="dist-label">
+                                <span class="dist-color medium"></span>
+                                Medium
+                            </span>
+                            <span class="dist-value">5 (36%)</span>
+                        </div>
+                        <div class="distribution-item">
+                            <span class="dist-label">
+                                <span class="dist-color low"></span>
+                                Low
+                            </span>
+                            <span class="dist-value">2 (14%)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Mitigation Status -->
+                    <div class="mitigation-status">
+                        <h4>Mitigation Status</h4>
+                        <div class="status-item">
                             <i class="fas fa-check-circle text-success"></i>
-                            <span><strong>301 Redirect Map:</strong> In progress - 25% complete</span>
+                            <span>Resolved: 2</span>
                         </div>
-                        <div class="mitigation-item">
-                            <i class="fas fa-clock text-warning"></i>
-                            <span><strong>Content Audit:</strong> Scheduled for Week 3</span>
+                        <div class="status-item">
+                            <i class="fas fa-spinner text-warning"></i>
+                            <span>In Progress: 6</span>
                         </div>
-                        <div class="mitigation-item">
-                            <i class="fas fa-exclamation-circle text-danger"></i>
-                            <span><strong>URL Planning:</strong> Requires immediate attention</span>
+                        <div class="status-item">
+                            <i class="fas fa-calendar text-info"></i>
+                            <span>Planned: 4</span>
+                        </div>
+                        <div class="status-item">
+                            <i class="fas fa-times-circle text-danger"></i>
+                            <span>Not Started: 2</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Risk Trend -->
+                    <div class="risk-trend">
+                        <h4>Risk Trend (4 Weeks)</h4>
+                        <div class="trend-chart">
+                            <canvas id="risk-trend-chart" width="200" height="80"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Next Review: Feb 15</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-user"></i>
+                            <span>Owner: Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Risks Requiring Attention -->
+            <div class="top-risks-section">
+                <h3><i class="fas fa-exclamation-triangle"></i> Top 5 Risks Requiring Attention</h3>
+                <div class="top-risks-grid">
+                    <!-- Risk 1 -->
+                    <div class="top-risk-card critical">
+                        <div class="risk-header">
+                            <span class="risk-badge critical">Critical</span>
+                            <span class="risk-name">301 Redirect Mapping</span>
+                        </div>
+                        <div class="risk-details">
+                            <div class="risk-meta-row">
+                                <span><i class="fas fa-user"></i> Owner: Tech Team</span>
+                                <span><i class="fas fa-calendar"></i> Due: Week 8</span>
+                            </div>
+                            <div class="risk-progress">
+                                <span class="progress-label">Status: 25% Complete</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 25%;"></div>
+                                </div>
+                            </div>
+                            <p class="risk-description">Critical for maintaining search rankings and traffic during migration.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Risk 2 -->
+                    <div class="top-risk-card critical">
+                        <div class="risk-header">
+                            <span class="risk-badge critical">Critical</span>
+                            <span class="risk-name">Search Rankings Protection</span>
+                        </div>
+                        <div class="risk-details">
+                            <div class="risk-meta-row">
+                                <span><i class="fas fa-user"></i> Owner: SEO Team</span>
+                                <span><i class="fas fa-calendar"></i> Due: Week 10</span>
+                            </div>
+                            <div class="risk-progress">
+                                <span class="progress-label">Status: In Planning</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 10%;"></div>
+                                </div>
+                            </div>
+                            <p class="risk-description">Preserve organic visibility and prevent ranking drops post-migration.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Risk 3 -->
+                    <div class="top-risk-card high">
+                        <div class="risk-header">
+                            <span class="risk-badge high">High</span>
+                            <span class="risk-name">Content Migration QA</span>
+                        </div>
+                        <div class="risk-details">
+                            <div class="risk-meta-row">
+                                <span><i class="fas fa-user"></i> Owner: Content Team</span>
+                                <span><i class="fas fa-calendar"></i> Due: Week 9</span>
+                            </div>
+                            <div class="risk-progress">
+                                <span class="progress-label">Status: Not Started</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            <p class="risk-description">Ensure all content is properly migrated without gaps or errors.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Risk 4 -->
+                    <div class="top-risk-card high">
+                        <div class="risk-header">
+                            <span class="risk-badge high">High</span>
+                            <span class="risk-name">Site Performance</span>
+                        </div>
+                        <div class="risk-details">
+                            <div class="risk-meta-row">
+                                <span><i class="fas fa-user"></i> Owner: Dev Team</span>
+                                <span><i class="fas fa-calendar"></i> Due: Week 11</span>
+                            </div>
+                            <div class="risk-progress">
+                                <span class="progress-label">Status: 40% Complete</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                            <p class="risk-description">Maintain or improve Core Web Vitals and page load speeds.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Risk 5 -->
+                    <div class="top-risk-card medium">
+                        <div class="risk-header">
+                            <span class="risk-badge medium">Medium</span>
+                            <span class="risk-name">Analytics Continuity</span>
+                        </div>
+                        <div class="risk-details">
+                            <div class="risk-meta-row">
+                                <span><i class="fas fa-user"></i> Owner: Analytics Team</span>
+                                <span><i class="fas fa-calendar"></i> Due: Week 10</span>
+                            </div>
+                            <div class="risk-progress">
+                                <span class="progress-label">Status: 60% Complete</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <p class="risk-description">Ensure tracking continuity and data integrity during transition.</p>
                         </div>
                     </div>
                 </div>
