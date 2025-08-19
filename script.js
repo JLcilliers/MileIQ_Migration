@@ -466,6 +466,22 @@ function updateMigrationStats() {
     }
 }
 
+// Toggle phase task expansion
+function togglePhaseTasks(phaseId) {
+    const tasksElement = document.getElementById(phaseId + '-tasks');
+    const button = event.target.closest('.expand-tasks');
+    
+    if (tasksElement) {
+        tasksElement.classList.toggle('expanded');
+        const icon = button.querySelector('i');
+        if (tasksElement.classList.contains('expanded')) {
+            icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+            icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        }
+    }
+}
+
 // Add animation styles
 const style = document.createElement('style');
 style.textContent = `
