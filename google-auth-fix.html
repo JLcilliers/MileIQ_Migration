@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Auth Test - New GIS Library</title>
+</head>
+<body>
+    <h1>Google Identity Services Test</h1>
+    <div id="buttonDiv"></div>
+    <button onclick="handleSignout()">Sign Out</button>
+    <div id="content"></div>
+
+    <!-- New Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <script>
+        // Your actual client ID
+        const CLIENT_ID = '668166969696-hr08cm473kkfqaen39d076pal3ls62so.apps.googleusercontent.com';
+        
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+            document.getElementById('content').innerHTML = 'Signed in successfully!';
+        }
+        
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: CLIENT_ID,
+                callback: handleCredentialResponse
+            });
+            
+            google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"),
+                { 
+                    theme: "outline", 
+                    size: "large",
+                    text: "continue_with",
+                    shape: "rectangular",
+                    logo_alignment: "left"
+                }
+            );
+            
+            google.accounts.id.prompt(); // Also display the One Tap dialog
+        }
+        
+        function handleSignout() {
+            google.accounts.id.disableAutoSelect();
+            document.getElementById('content').innerHTML = 'Signed out';
+        }
+    </script>
+</body>
+</html>

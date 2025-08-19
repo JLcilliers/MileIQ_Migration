@@ -7,7 +7,13 @@
       "Bash(git branch:*)",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(git reset:*)",
+      "Bash(rm:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(curl:*)",
+      "Bash(grep:*)"
     ],
     "defaultMode": "acceptEdits"
   }
