@@ -1,7 +1,7 @@
 /* MileIQ Migration Hub Styles */
 
 :root {
-    /* MileIQ Brand Colors */
+    /* MileIQ Brand Colors - Updated */
     --mileiq-teal: #00A88E;
     --mileiq-teal-dark: #008770;
     --mileiq-teal-light: #E6F7F4;
@@ -654,38 +654,62 @@ code {
     gap: 3rem;
 }
 
-/* Timeline Visualization */
+/* Timeline Visualization - FIXED */
 .roadmap-timeline {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-    padding: 2rem 0;
-    overflow-x: auto;
-    min-height: 300px;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    position: relative !important;
+    padding: 60px 20px 20px 20px !important;
+    overflow-x: auto !important;
+    min-height: 400px !important;
+    gap: 0 !important;
 }
 
 .roadmap-phase {
     flex: 1;
-    min-width: 150px;
+    min-width: 180px;
+    max-width: 200px;
     position: relative;
     text-align: center;
+    z-index: 2;
+    padding: 0 10px;
     animation: fadeInUp 0.5s ease;
 }
 
+/* Connected Timeline Progress Line */
+.timeline-progress-line {
+    position: absolute !important;
+    top: 60px !important;
+    left: 90px !important;
+    right: 90px !important;
+    height: 4px !important;
+    background: #e5e7eb !important;
+    z-index: 1 !important;
+}
+
+.timeline-progress-fill {
+    height: 100% !important;
+    background: linear-gradient(90deg, var(--primary-color), var(--success-color)) !important;
+    border-radius: 2px !important;
+    transition: width 0.8s ease !important;
+}
+
 .phase-marker {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1rem;
-    background: white;
-    border: 3px solid #e5e7eb;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 auto 1rem !important;
+    background: white !important;
+    border: 3px solid #e5e7eb !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+    transition: all 0.3s ease !important;
+    flex-direction: column !important;
+    cursor: pointer !important;
 }
 
 .phase-marker.active {
