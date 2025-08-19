@@ -9,13 +9,140 @@
     <script src="api-config.js" defer></script>
 </head>
 <body>
-    <!-- Header Section with Confluence Links -->
+    <!-- Header Section with MileIQ Branding -->
     <header class="header">
         <div class="container">
-            <h1><i class="fas fa-exchange-alt"></i> MileIQ Webflow Migration Hub</h1>
-            <p class="subtitle">Real-time monitoring, interactive checklists, and centralized documentation</p>
+            <div class="header-content">
+                <div class="brand-section">
+                    <div class="logo-container">
+                        <svg class="mileiq-logo" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="30" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="white">MileIQ</text>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h1>Webflow Migration Command Center</h1>
+                        <p class="subtitle">SEO Migration Strategy & Implementation</p>
+                    </div>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="migration-progress">15%</span>
+                        <span class="stat-label">Complete</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="days-remaining">76</span>
+                        <span class="stat-label">Days to Launch</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="risk-level">Low</span>
+                        <span class="stat-label">Risk Level</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
+
+    <!-- Executive Summary Section -->
+    <section class="executive-summary">
+        <div class="container">
+            <div class="summary-grid">
+                <!-- Migration Status Card -->
+                <div class="summary-card status-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Migration Status</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="status-overview">
+                            <div class="current-phase">
+                                <span class="phase-label">Current Phase:</span>
+                                <span class="phase-name">Discovery & Analysis</span>
+                            </div>
+                            <div class="progress-visual">
+                                <div class="progress-bar-large">
+                                    <div class="progress-fill-large" style="width: 15%;"></div>
+                                </div>
+                                <span class="progress-percentage">15% Complete</span>
+                            </div>
+                        </div>
+                        <div class="key-metrics">
+                            <div class="metric">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span>3 Tasks Completed</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-clock text-warning"></i>
+                                <span>5 Tasks In Progress</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-tasks text-info"></i>
+                                <span>42 Tasks Remaining</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Alerts Card -->
+                <div class="summary-card alerts-card">
+                    <div class="card-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Critical Alerts</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="alert-item success">
+                            <i class="fas fa-check"></i>
+                            <div class="alert-text">
+                                <strong>Baseline Metrics Captured</strong>
+                                <span>All current SEO metrics documented</span>
+                            </div>
+                        </div>
+                        <div class="alert-item warning">
+                            <i class="fas fa-exclamation"></i>
+                            <div class="alert-text">
+                                <strong>GA View ID Required</strong>
+                                <span>Need Google Analytics View ID for API</span>
+                            </div>
+                        </div>
+                        <div class="alert-item info">
+                            <i class="fas fa-info"></i>
+                            <div class="alert-text">
+                                <strong>Next Milestone: URL Mapping</strong>
+                                <span>Due in 5 days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Card -->
+                <div class="summary-card actions-card">
+                    <div class="card-header">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="action-buttons">
+                            <button class="action-btn primary" onclick="scrollToSection('checklist-section')">
+                                <i class="fas fa-clipboard-check"></i>
+                                <span>View Checklist</span>
+                            </button>
+                            <button class="action-btn secondary" onclick="scrollToSection('dashboard-section')">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>SEO Metrics</span>
+                            </button>
+                            <button class="action-btn success" onclick="exportChecklist()">
+                                <i class="fas fa-download"></i>
+                                <span>Export Report</span>
+                            </button>
+                            <button class="action-btn warning" onclick="scrollToSection('risk-assessment')">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Risk Matrix</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Confluence Documentation Links -->
     <section class="confluence-section">
@@ -450,6 +577,120 @@
                         <li>Form handling changes require new integration setup</li>
                         <li>Limited plugin ecosystem compared to current platform</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Assessment Matrix -->
+    <section class="risk-assessment" id="risk-assessment">
+        <div class="container">
+            <h2><i class="fas fa-shield-alt"></i> Risk Assessment Matrix</h2>
+            <div class="risk-matrix-container">
+                <div class="risk-grid">
+                    <div class="risk-header impact">Impact →</div>
+                    <div class="risk-header likelihood">↑ Likelihood</div>
+                    <div class="risk-label low-impact">Low</div>
+                    <div class="risk-label med-impact">Medium</div>
+                    <div class="risk-label high-impact">High</div>
+                    
+                    <div class="risk-label high-likelihood">High</div>
+                    <div class="risk-cell medium-risk" data-risk="medium">
+                        <div class="risk-item">
+                            <span class="risk-title">Content Gaps</span>
+                            <span class="risk-desc">Missing pages during migration</span>
+                        </div>
+                    </div>
+                    <div class="risk-cell high-risk" data-risk="high">
+                        <div class="risk-item">
+                            <span class="risk-title">301 Redirect Failures</span>
+                            <span class="risk-desc">Broken redirects causing traffic loss</span>
+                        </div>
+                    </div>
+                    <div class="risk-cell critical-risk" data-risk="critical">
+                        <div class="risk-item">
+                            <span class="risk-title">URL Structure Changes</span>
+                            <span class="risk-desc">Complete URL hierarchy modification</span>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-label med-likelihood">Medium</div>
+                    <div class="risk-cell low-risk" data-risk="low">
+                        <div class="risk-item">
+                            <span class="risk-title">Image Optimization</span>
+                            <span class="risk-desc">Slower page load times</span>
+                        </div>
+                    </div>
+                    <div class="risk-cell medium-risk" data-risk="medium">
+                        <div class="risk-item">
+                            <span class="risk-title">Meta Data Loss</span>
+                            <span class="risk-desc">SEO tags not transferred</span>
+                        </div>
+                    </div>
+                    <div class="risk-cell high-risk" data-risk="high">
+                        <div class="risk-item">
+                            <span class="risk-title">Internal Link Breaks</span>
+                            <span class="risk-desc">Damaged link equity</span>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-label low-likelihood">Low</div>
+                    <div class="risk-cell low-risk" data-risk="low">
+                        <div class="risk-item">
+                            <span class="risk-title">CSS Conflicts</span>
+                            <span class="risk-desc">Minor styling issues</span>
+                        </div>
+                    </div>
+                    <div class="risk-cell low-risk" data-risk="low">
+                        <div class="risk-item">
+                            <span class="risk-title">Form Integration</span>
+                            <span class="risk-desc">Contact form setup delays</span>
+                        </div>
+                    </div>
+                    <div class="risk-cell medium-risk" data-risk="medium">
+                        <div class="risk-item">
+                            <span class="risk-title">Analytics Disruption</span>
+                            <span class="risk-desc">Data tracking gaps</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="risk-legend">
+                    <h3>Risk Levels & Mitigation Status</h3>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="risk-color low"></span>
+                            <span>Low Risk - Monitor</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="risk-color medium"></span>
+                            <span>Medium Risk - Plan Mitigation</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="risk-color high"></span>
+                            <span>High Risk - Active Mitigation</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="risk-color critical"></span>
+                            <span>Critical Risk - Immediate Action</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mitigation-summary">
+                        <h4>Mitigation Actions</h4>
+                        <div class="mitigation-item">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span><strong>301 Redirect Map:</strong> In progress - 25% complete</span>
+                        </div>
+                        <div class="mitigation-item">
+                            <i class="fas fa-clock text-warning"></i>
+                            <span><strong>Content Audit:</strong> Scheduled for Week 3</span>
+                        </div>
+                        <div class="mitigation-item">
+                            <i class="fas fa-exclamation-circle text-danger"></i>
+                            <span><strong>URL Planning:</strong> Requires immediate attention</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

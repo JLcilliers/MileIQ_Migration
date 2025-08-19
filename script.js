@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeDashboard();
     expandFirstPhase();
     initializeRoadmap();
+    updateMigrationStats();
 });
 
 // LocalStorage Keys
@@ -50,6 +51,7 @@ function saveProgress() {
     
     localStorage.setItem(STORAGE_KEYS.checklistProgress, JSON.stringify(progress));
     updateProgressBar();
+    updateMigrationStats();
 }
 
 // Update progress bar
@@ -378,6 +380,90 @@ function showNotification(message, type = 'info') {
             document.body.removeChild(notification);
         }, 300);
     }, 3000);
+}
+
+// Scroll to section smoothly
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// Update migration statistics in header and executive summary
+function updateMigrationStats() {
+    // Calculate overall progress
+    const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    const total = checkboxes.length;
+    const checked = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked').length;
+    const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+    
+    // Update header stats
+    const progressElement = document.getElementById('migration-progress');
+    if (progressElement) {
+        progressElement.textContent = percentage + '%';
+    }
+    
+    // Calculate days remaining (assuming launch date is 90 days from project start)
+    const projectStartDate = new Date('2025-01-01');
+    const launchDate = new Date(projectStartDate);
+    launchDate.setDate(launchDate.getDate() + 90);
+    const today = new Date();
+    const daysRemaining = Math.ceil((launchDate - today) / (1000 * 60 * 60 * 24));
+    
+    const daysElement = document.getElementById('days-remaining');
+    if (daysElement) {
+        daysElement.textContent = daysRemaining > 0 ? daysRemaining : '0';
+    }
+    
+    // Update risk level based on progress and days remaining
+    const riskElement = document.getElementById('risk-level');
+    if (riskElement) {
+        if (percentage < 20 && daysRemaining < 30) {
+            riskElement.textContent = 'High';
+            riskElement.style.color = '#E74C3C';
+        } else if (percentage < 50 && daysRemaining < 45) {
+            riskElement.textContent = 'Medium';
+            riskElement.style.color = '#F39C12';
+        } else {
+            riskElement.textContent = 'Low';
+            riskElement.style.color = '#27AE60';
+        }
+    }
+    
+    // Update executive summary progress
+    const summaryProgress = document.querySelector('.progress-fill-large');
+    if (summaryProgress) {
+        summaryProgress.style.width = percentage + '%';
+    }
+    
+    const summaryPercentage = document.querySelector('.progress-percentage');
+    if (summaryPercentage) {
+        summaryPercentage.textContent = percentage + '% Complete';
+    }
+    
+    // Update task counts
+    const tasksCompleted = checked;
+    const tasksRemaining = total - checked;
+    const tasksInProgress = Math.min(5, tasksRemaining); // Estimate
+    
+    const metricsContainer = document.querySelector('.key-metrics');
+    if (metricsContainer) {
+        metricsContainer.innerHTML = `
+            <div class="metric">
+                <i class="fas fa-check-circle text-success"></i>
+                <span>${tasksCompleted} Tasks Completed</span>
+            </div>
+            <div class="metric">
+                <i class="fas fa-clock text-warning"></i>
+                <span>${tasksInProgress} Tasks In Progress</span>
+            </div>
+            <div class="metric">
+                <i class="fas fa-tasks text-info"></i>
+                <span>${tasksRemaining} Tasks Remaining</span>
+            </div>
+        `;
+    }
 }
 
 // Add animation styles
