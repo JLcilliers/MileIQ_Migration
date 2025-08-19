@@ -1,11 +1,11 @@
 // Google API Configuration for MileIQ Migration Hub
 // This file handles the integration with Google Analytics and Search Console APIs
 
-// Configuration object - Replace with your actual credentials
+// Configuration object - MileIQ Google API Credentials
 const API_CONFIG = {
     // Google Cloud Project credentials
-    CLIENT_ID: 'YOUR_CLIENT_ID.apps.googleusercontent.com', // Replace with your OAuth 2.0 Client ID
-    API_KEY: 'YOUR_API_KEY', // Replace with your API Key
+    CLIENT_ID: '998982098952-et4jamotfaitvlp5d1mim3ve144dbm2s.apps.googleusercontent.com', // OAuth 2.0 Client ID
+    API_KEY: 'AIzaSyB8QFm0ztizvXbzpfGaC8Vj2a6-lKg1q-0', // PageSpeed Insights API Key
     
     // Scopes for API access
     SCOPES: [
@@ -20,10 +20,10 @@ const API_CONFIG = {
     ],
     
     // Your Google Analytics View ID
-    GA_VIEW_ID: 'YOUR_VIEW_ID', // Replace with your GA View ID (e.g., '123456789')
+    GA_VIEW_ID: 'YOUR_VIEW_ID', // TODO: Get this from Google Analytics Admin → View Settings
     
     // Your website URL for Search Console
-    SITE_URL: 'https://mileiq.com' // Replace with your actual website URL
+    SITE_URL: 'https://mileiq.com' // MileIQ website URL
 };
 
 // Google API loader
