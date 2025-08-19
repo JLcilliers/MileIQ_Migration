@@ -389,7 +389,7 @@ function addApiControlButtons() {
         apiControls.innerHTML = `
             <span id="api-status" class="api-status disconnected">Disconnected</span>
             <button id="google-connect-btn" class="btn-connect" onclick="signInToGoogle()">
-                <i class="fab fa-google"></i> Connect Google
+                <i class="fas fa-sign-in-alt"></i> Connect Google
             </button>
             <button id="google-disconnect-btn" class="btn-disconnect" onclick="signOutFromGoogle()" style="display: none;">
                 <i class="fas fa-sign-out-alt"></i> Disconnect
