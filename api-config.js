@@ -4,8 +4,8 @@
 // Configuration object - MileIQ Google API Credentials
 const API_CONFIG = {
     // Google Cloud Project credentials
-    CLIENT_ID: '998982098952-et4jamotfaitvlp5d1mim3ve144dbm2s.apps.googleusercontent.com', // OAuth 2.0 Client ID
-    API_KEY: 'AIzaSyB8QFm0ztizvXbzpfGaC8Vj2a6-lKg1q-0', // PageSpeed Insights API Key
+    CLIENT_ID: '668166969696-hr08cm473kkfqaen39d076pal3ls62so.apps.googleusercontent.com', // OAuth 2.0 Client ID
+    API_KEY: 'AIzaSyC7KLfN6tu3u37BtcBJjnZi28xKz_Y1NJA', // API Key for PageSpeed Insights and other APIs
     
     // Scopes for API access
     SCOPES: [
@@ -15,12 +15,12 @@ const API_CONFIG = {
     
     // Discovery docs for APIs
     DISCOVERY_DOCS: [
-        'https://analyticsreporting.googleapis.com/$discovery/rest?version=v4',
+        'https://analyticsdata.googleapis.com/$discovery/rest?version=v1beta',
         'https://www.googleapis.com/discovery/v1/apis/searchconsole/v1/rest'
     ],
     
-    // Your Google Analytics View ID
-    GA_VIEW_ID: 'YOUR_VIEW_ID', // TODO: Get this from Google Analytics Admin → View Settings
+    // GA4 Property ID
+    GA4_PROPERTY_ID: '321430282', // GA4 Property ID for MileIQ
     
     // Your website URL for Search Console
     SITE_URL: 'https://mileiq.com' // MileIQ website URL
@@ -127,7 +127,7 @@ function signOutFromGoogle() {
     }
 }
 
-// Fetch Google Analytics data
+// Fetch Google Analytics data (GA4)
 async function fetchGoogleAnalyticsData() {
     if (!authInstance || !authInstance.isSignedIn.get()) {
         console.log('Not signed in to Google');
@@ -135,44 +135,44 @@ async function fetchGoogleAnalyticsData() {
     }
     
     try {
-        const response = await gapi.client.analyticsreporting.reports.batchGet({
-            reportRequests: [{
-                viewId: API_CONFIG.GA_VIEW_ID,
+        const response = await gapi.client.analyticsdata.properties.runReport({
+            property: `properties/${API_CONFIG.GA4_PROPERTY_ID}`,
+            resource: {
                 dateRanges: [{
                     startDate: '30daysAgo',
                     endDate: 'today'
                 }],
                 metrics: [
-                    { expression: 'ga:sessions' },
-                    { expression: 'ga:users' },
-                    { expression: 'ga:bounceRate' },
-                    { expression: 'ga:avgSessionDuration' },
-                    { expression: 'ga:goalCompletionsAll' },
-                    { expression: 'ga:organicSearches' }
-                ],
-                dimensions: [{ name: 'ga:date' }]
-            }]
+                    { name: 'sessions' },
+                    { name: 'totalUsers' },
+                    { name: 'bounceRate' },
+                    { name: 'averageSessionDuration' },
+                    { name: 'conversions' },
+                    { name: 'organicGoogleSearchClicks' }
+                ]
+            }
         });
         
-        if (response.result.reports && response.result.reports[0]) {
-            const report = response.result.reports[0];
-            const totals = report.data.totals[0].values;
+        if (response.result.rows && response.result.rows.length > 0) {
+            const totals = response.result.totals[0].metricValues;
             
             // Update dashboard with real data
-            updateMetric('ga-traffic', formatNumber(totals[5])); // Organic searches
-            updateMetric('ga-bounce', (parseFloat(totals[2]).toFixed(1)) + '%');
-            updateMetric('ga-session', formatDuration(totals[3]));
-            updateMetric('ga-conversions', formatNumber(totals[4]));
+            updateMetric('ga-traffic', formatNumber(totals[5].value)); // Organic searches
+            updateMetric('ga-bounce', (parseFloat(totals[2].value * 100).toFixed(1)) + '%');
+            updateMetric('ga-session', formatDuration(totals[3].value));
+            updateMetric('ga-conversions', formatNumber(totals[4].value));
             
             // Store data in localStorage
             const gaData = {
-                traffic: totals[5],
-                bounceRate: totals[2],
-                avgSession: totals[3],
-                conversions: totals[4],
+                traffic: totals[5].value,
+                bounceRate: totals[2].value,
+                avgSession: totals[3].value,
+                conversions: totals[4].value,
                 lastUpdated: new Date().toISOString()
             };
             localStorage.setItem('mileiq_ga_data', JSON.stringify(gaData));
+            
+            console.log('Google Analytics data updated successfully');
         }
         
     } catch (error) {
@@ -358,13 +358,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add connect button to dashboard if not exists
     addApiControlButtons();
     
-    // Check if API credentials are configured
-    if (API_CONFIG.CLIENT_ID === 'YOUR_CLIENT_ID.apps.googleusercontent.com' || 
-        API_CONFIG.API_KEY === 'YOUR_API_KEY' ||
-        API_CONFIG.GA_VIEW_ID === 'YOUR_VIEW_ID') {
-        console.log('Google API integration disabled - using mock data');
-        return;
-    }
+    // Google API credentials are now configured - proceed with initialization
+    console.log('Google API credentials configured, initializing...');
     
     // Load Google API
     loadGoogleAPI().then(() => {
@@ -374,10 +369,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Also fetch Core Web Vitals (doesn't require auth)
-    if (API_CONFIG.API_KEY !== 'YOUR_API_KEY') {
-        fetchCoreWebVitals();
-        setInterval(fetchCoreWebVitals, 3600000); // Update every hour
-    }
+    fetchCoreWebVitals();
+    setInterval(fetchCoreWebVitals, 3600000); // Update every hour
 });
 
 // Add API control buttons to the dashboard
