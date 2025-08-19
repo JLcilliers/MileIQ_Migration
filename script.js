@@ -469,15 +469,17 @@ function updateMigrationStats() {
 // Toggle phase task expansion
 function togglePhaseTasks(phaseId) {
     const tasksElement = document.getElementById(phaseId + '-tasks');
-    const button = event.target.closest('.expand-tasks');
+    const button = event.currentTarget || event.target.closest('.expand-tasks');
     
-    if (tasksElement) {
+    if (tasksElement && button) {
         tasksElement.classList.toggle('expanded');
         const icon = button.querySelector('i');
-        if (tasksElement.classList.contains('expanded')) {
-            icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-        } else {
-            icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        if (icon) {
+            if (tasksElement.classList.contains('expanded')) {
+                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            } else {
+                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            }
         }
     }
 }
@@ -538,15 +540,34 @@ function monitorCriticalMetrics() {
 
 // Initialize Roadmap
 function initializeRoadmap() {
-    // Add click handlers to phase markers
-    const phaseMarkers = document.querySelectorAll('.phase-marker');
-    phaseMarkers.forEach((marker, index) => {
-        marker.addEventListener('click', function() {
-            showPhaseDetails(index + 1);
-        });
+    // Fix phase markers click handlers
+    const phases = document.querySelectorAll('.roadmap-phase');
+    phases.forEach((phase, index) => {
+        const marker = phase.querySelector('.phase-marker');
+        if (marker) {
+            marker.style.cursor = 'pointer';
+            marker.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const tasks = phase.querySelector('.phase-tasks');
+                const expandBtn = phase.querySelector('.expand-tasks');
+                if (tasks) {
+                    tasks.classList.toggle('expanded');
+                    if (expandBtn) {
+                        const icon = expandBtn.querySelector('i');
+                        if (icon) {
+                            if (tasks.classList.contains('expanded')) {
+                                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                            } else {
+                                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                            }
+                        }
+                    }
+                }
+            });
+        }
     });
     
-    // Update roadmap based on checklist progress
+    // Initialize roadmap progress
     updateRoadmapProgress();
     
     // Add hover effects
@@ -582,32 +603,29 @@ function showPhaseDetails(phaseNumber) {
 function updateRoadmapProgress() {
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
     const totalCheckboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]').length;
-    const progressPercentage = (checkboxes.length / totalCheckboxes) * 100;
+    const progressPercentage = totalCheckboxes > 0 ? (checkboxes.length / totalCheckboxes) * 100 : 0;
     
-    // Update phase markers based on progress
-    if (progressPercentage > 0) {
-        updatePhaseStatus(1, 'active');
+    // Update the timeline progress fill
+    const timelineFill = document.querySelector('.timeline-progress-fill');
+    if (timelineFill) {
+        timelineFill.style.width = Math.min(100, progressPercentage * 1.2) + '%';
     }
-    if (progressPercentage > 20) {
-        updatePhaseStatus(1, 'completed');
-        updatePhaseStatus(2, 'active');
+    
+    // Update roadmap progress bar
+    const roadmapFill = document.querySelector('.roadmap-progress-fill');
+    if (roadmapFill) {
+        roadmapFill.style.width = progressPercentage + '%';
     }
-    if (progressPercentage > 40) {
-        updatePhaseStatus(2, 'completed');
-        updatePhaseStatus(3, 'active');
+    
+    // Update roadmap progress text
+    const roadmapText = document.querySelector('.roadmap-progress-text');
+    if (roadmapText) {
+        const completedPhases = Math.floor(progressPercentage / 16.67); // 6 phases
+        roadmapText.textContent = `${completedPhases} of 6 phases complete (${Math.round(progressPercentage)}%)`;
     }
-    if (progressPercentage > 60) {
-        updatePhaseStatus(3, 'completed');
-        updatePhaseStatus(4, 'active');
-    }
-    if (progressPercentage > 80) {
-        updatePhaseStatus(4, 'completed');
-        updatePhaseStatus(5, 'active');
-    }
-    if (progressPercentage > 90) {
-        updatePhaseStatus(5, 'completed');
-        updatePhaseStatus(6, 'active');
-    }
+    
+    // Update phase statuses based on actual progress
+    updatePhaseStatuses(progressPercentage);
     
     // Update milestone progress bars
     updateMilestoneProgress();
@@ -685,6 +703,28 @@ function updateCriticalPath() {
             item.classList.remove('completed');
         } else {
             item.classList.remove('active', 'completed');
+        }
+    });
+}
+
+// Update phase statuses based on progress percentage
+function updatePhaseStatuses(percentage) {
+    const phases = document.querySelectorAll('.roadmap-phase');
+    const phaseThresholds = [0, 16.67, 33.33, 50, 66.67, 83.33];
+    
+    phases.forEach((phase, index) => {
+        const threshold = phaseThresholds[index];
+        const nextThreshold = phaseThresholds[index + 1] || 100;
+        
+        if (percentage >= nextThreshold) {
+            phase.classList.add('completed');
+            phase.classList.remove('current', 'upcoming');
+        } else if (percentage >= threshold) {
+            phase.classList.add('current');
+            phase.classList.remove('completed', 'upcoming');
+        } else {
+            phase.classList.add('upcoming');
+            phase.classList.remove('completed', 'current');
         }
     });
 }

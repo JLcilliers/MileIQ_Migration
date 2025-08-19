@@ -16,7 +16,7 @@ const API_CONFIG = {
     // Discovery docs for APIs
     DISCOVERY_DOCS: [
         'https://analyticsdata.googleapis.com/$discovery/rest?version=v1beta',
-        'https://www.googleapis.com/discovery/v1/apis/searchconsole/v1/rest'
+        'https://www.googleapis.com/discovery/v1/apis/webmasters/v3/rest'
     ],
     
     // GA4 Property ID
@@ -51,7 +51,13 @@ async function initializeGoogleAPI() {
         await gapi.client.init({
             apiKey: API_CONFIG.API_KEY,
             clientId: API_CONFIG.CLIENT_ID,
-            discoveryDocs: API_CONFIG.DISCOVERY_DOCS,
+            scope: API_CONFIG.SCOPES.join(' '),
+            plugin_name: 'MileIQ Migration Hub' // Add this for new Google requirements
+        });
+        
+        // Initialize auth2 after client
+        await gapi.auth2.init({
+            client_id: API_CONFIG.CLIENT_ID,
             scope: API_CONFIG.SCOPES.join(' ')
         });
         
@@ -64,10 +70,12 @@ async function initializeGoogleAPI() {
         // Handle initial sign-in state
         updateSigninStatus(authInstance.isSignedIn.get());
         
+        console.log('Google API initialized successfully');
         return true;
     } catch (error) {
         console.error('Error initializing Google API:', error);
-        showNotification('Failed to initialize Google API. Please check your credentials.', 'error');
+        console.error('Error details:', error.details || error.error || error);
+        showNotification('Failed to initialize Google API. Check console for details.', 'error');
         return false;
     }
 }
@@ -135,39 +143,53 @@ async function fetchGoogleAnalyticsData() {
     }
     
     try {
+        // First, try to load the client library properly
+        await gapi.client.load('analyticsdata', 'v1beta');
+        
         const response = await gapi.client.analyticsdata.properties.runReport({
-            property: `properties/${API_CONFIG.GA4_PROPERTY_ID}`,
-            resource: {
+            property: 'properties/321430282', // Your GA4 property ID from the file
+            requestBody: {
                 dateRanges: [{
                     startDate: '30daysAgo',
                     endDate: 'today'
                 }],
+                dimensions: [
+                    { name: 'sessionDefaultChannelGroup' }
+                ],
                 metrics: [
                     { name: 'sessions' },
                     { name: 'totalUsers' },
                     { name: 'bounceRate' },
                     { name: 'averageSessionDuration' },
-                    { name: 'conversions' },
-                    { name: 'organicGoogleSearchClicks' }
-                ]
+                    { name: 'conversions' }
+                ],
+                dimensionFilter: {
+                    filter: {
+                        fieldName: 'sessionDefaultChannelGroup',
+                        stringFilter: {
+                            value: 'Organic Search'
+                        }
+                    }
+                }
             }
         });
         
         if (response.result.rows && response.result.rows.length > 0) {
-            const totals = response.result.totals[0].metricValues;
+            const row = response.result.rows[0];
+            const metrics = row.metricValues;
             
             // Update dashboard with real data
-            updateMetric('ga-traffic', formatNumber(totals[5].value)); // Organic searches
-            updateMetric('ga-bounce', (parseFloat(totals[2].value * 100).toFixed(1)) + '%');
-            updateMetric('ga-session', formatDuration(totals[3].value));
-            updateMetric('ga-conversions', formatNumber(totals[4].value));
+            updateMetric('ga-traffic', formatNumber(metrics[0].value)); // Sessions
+            updateMetric('ga-bounce', (parseFloat(metrics[2].value * 100).toFixed(1)) + '%');
+            updateMetric('ga-session', formatDuration(metrics[3].value));
+            updateMetric('ga-conversions', formatNumber(metrics[4].value || '0'));
             
             // Store data in localStorage
             const gaData = {
-                traffic: totals[5].value,
-                bounceRate: totals[2].value,
-                avgSession: totals[3].value,
-                conversions: totals[4].value,
+                traffic: metrics[0].value,
+                bounceRate: metrics[2].value,
+                avgSession: metrics[3].value,
+                conversions: metrics[4].value || '0',
                 lastUpdated: new Date().toISOString()
             };
             localStorage.setItem('mileiq_ga_data', JSON.stringify(gaData));
